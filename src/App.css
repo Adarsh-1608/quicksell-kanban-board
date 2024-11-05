@@ -1,0 +1,435 @@
+body, .header{
+  background-color: #F4F6FA;
+  font-family: Arial, sans-serif;
+}
+
+.column-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-icons {
+  display: flex;
+  gap: 8px;
+}
+
+.plus-icon, .options-icon {
+  font-size: 1.2em;
+  color: #666;
+  cursor: pointer;
+}
+.bordered-circle {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #666;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+.kanban-board {
+  display: flex;
+  overflow-x: auto;
+}
+
+.kanban-column {
+  min-width: 300px;
+  margin: 0 10px;
+  
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.ticket {
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.id{
+  color: #909090
+}
+
+.ticket-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ticket-title {
+  margin-top: 5px;
+}
+
+.ticket.priority-4 { border-left: 4px solid red; }
+.ticket.priority-3 { border-left: 4px solid orange; }
+.ticket.priority-2 { border-left: 4px solid yellow; }
+.ticket.priority-1 { border-left: 4px solid green; }
+.ticket.priority-0 { border-left: 4px solid gray; }
+
+.ticket-icon {
+  font-size: 20px;
+  color: #666;
+}
+
+.offline-indicator {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: gray;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.tag-container {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #ddd; 
+  border-radius: 4px; 
+  padding: 4px 8px; 
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: white;
+}
+
+.display-dropdown {
+  position: relative;
+}
+
+.display-button {
+  padding: 8px 12px;
+  border: none;
+  background-color: white;body, .header {
+    background-color: #F4F6FA;
+    font-family: Arial, sans-serif;
+  }
+  
+  .column-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .header-icons {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .plus-icon, .options-icon {
+    font-size: 1.2em;
+    color: #666;
+    cursor: pointer;
+  }
+  
+  .bordered-circle {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #666;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+  
+  .kanban-board {
+    display: flex;
+    overflow-x: auto;
+    flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
+  }
+  
+  .kanban-column {
+    min-width: 300px;
+    margin: 0 10px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .ticket {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+  }
+  
+  .id {
+    color: #909090;
+  }
+  
+  .ticket-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .ticket-title {
+    margin-top: 5px;
+  }
+  
+  .ticket.priority-4 { border-left: 4px solid red; }
+  .ticket.priority-3 { border-left: 4px solid orange; }
+  .ticket.priority-2 { border-left: 4px solid yellow; }
+  .ticket.priority-1 { border-left: 4px solid green; }
+  .ticket.priority-0 { border-left: 4px solid gray; }
+  
+  .ticket-icon {
+    font-size: 20px;
+    color: #666;
+  }
+  
+  .offline-indicator {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: gray;
+    border-radius: 50%;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+  
+  .tag-container {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 4px 8px;
+  }
+  
+  .header-container {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: white;
+  }
+  
+  .display-dropdown {
+    position: relative;
+  }
+  
+  .display-button {
+    padding: 8px 12px;
+    border: none;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .display-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .display-button::after {
+    content: '';
+    display: inline-block;
+    margin-left: 8px; /* Space between text and arrow */
+    width: 16px;
+    height: 16px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    width: 200px;
+    z-index: 10;
+  }
+  
+  .dropdown-section {
+    display: flex; /* Align label and select inline */
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .dropdown-section label {
+    color: #909090;
+    margin-bottom: 5px;
+    display: block;
+    margin-right: 30px;
+    font-weight: bold;
+  }
+  
+  .dropdown-select {
+    flex: 1;
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+    cursor: pointer;
+  }
+  
+  .header label,
+  .header select {
+    font-size: 13px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .dropdown-section select:hover {
+    border-color: #007bff;
+  }
+  
+  .sliders-icon {
+    margin-right: 8px;
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  /* Responsive Styles */
+  
+  @media (max-width: 900px) {
+    .kanban-board {
+      flex-direction: column; /* Stack columns vertically */
+    }
+  
+    .kanban-column {
+      min-width: 100%; /* Full-width columns on mobile */
+      margin: 0 0 15px;
+    }
+  
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .header label,
+    .header select,
+    .ticket-title,
+    .plus-icon,
+    .options-icon {
+      font-size: 1em;
+    }
+  
+    .display-button {
+      font-size: 1em;
+      padding: 6px 10px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .header-container,
+    .dropdown-menu {
+      width: 100%;
+      padding: 8px;
+    }
+  
+    .ticket {
+      padding: 8px;
+      font-size: 0.9em;
+    }
+  
+    .tag-container {
+      font-size: 0.85em;
+      padding: 3px 6px;
+    }
+  
+    .dropdown-select {
+      font-size: 0.9em;
+    }
+  
+    .ticket-header,
+    .column-header {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+    }
+  
+    .header-icons {
+      gap: 4px;
+    }
+  }
+  
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  
+  cursor: pointer;
+}
+
+.display-button:hover {
+  background-color: #0056b3;
+}
+.display-button::after {
+  content: '';
+  display: inline-block;
+  margin-left: 8px; /* Space between text and arrow */
+  width: 16px;
+  height: 16px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  width: 200px;
+  z-index: 10;
+  
+}
+
+.dropdown-section {
+  display: flex; /* Align label and select inline */
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.dropdown-section label {
+ color: #909090;
+  margin-bottom: 5px;
+  display: block;
+  margin-right: 30px;
+  font-weight: bold;
+}
+
+.dropdown-select {
+  flex: 1;
+  width: 100%;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+  cursor: pointer;
+}
+
+.header label,
+.header select {
+  font-size: 13px; /* Adjust the size to whatever suits your design */
+  font-family: Arial, sans-serif; /* Ensure both have the same font */
+}
+
+/* Optional: Add a hover effect for better interactivity */
+.dropdown-section select:hover {
+  border-color: #007bff;
+}
+
+.sliders-icon {
+  margin-right: 8px; 
+  font-size: 1rem; 
+  color: #666;
+}
